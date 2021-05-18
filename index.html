@@ -11,30 +11,26 @@
   </head>
   <body>
     <div id="root"></div>
-
     <script type="text/babel">
-      // function formatName(user) {
-      //   return user.firstName + " " + user.lastName;
-      // }
-      // const user = {
-      //   firstName: "Harper",
-      //   lastName: "Perez",
-      // };
-      // const element = <h1>Hello, {formatName(user)}!</h1>;
 
-      // const name = 'Josh Perez';
-      // const element = <h1>Hello, {name}</h1>
-      function tick() {
-        const element = (
-          <div>
-            <h1>Hwllo, world!</h1>
-            <h2>it i {new Date().toLocaleString()}.</h2>
-          </div>
-        );
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('root')
+      );
 
-        ReactDOM.render(element, document.getElementById("root"));
-      }
-      setInterval(tick, 1000);
     </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
   </body>
 </html>
