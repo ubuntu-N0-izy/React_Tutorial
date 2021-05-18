@@ -12,25 +12,35 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      // propsを使ってみる
 
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-      );
+      //-----------------------関数コンポーネント
+      // function Welcome(props) {
+      //   return <h1>Hello, {props.name} </h1>;
+      // }
 
+      //-----------------------クラスコンポーネント
+      class Welcome extends React.Component {
+        render() {
+          return <h1>Hello, {this.props.name} </h1>;
+        }
+      }
+
+      // コンポーネントの使い回し
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="cahal" />
+            <Welcome name="edite" />
+          </div>
+        );
+      }
+
+      const element = <Welcome name="Sara" />;
+
+      //関数コンポーネントとクラスコンポーネントのやっていることは全く同じことです
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      Read this section for a production-ready setup with JSX:
-      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
-
-      In a larger project, you can use an integrated toolchain that includes JSX instead:
-      https://reactjs.org/docs/create-a-new-react-app.html
-
-      You can also use React without JSX, in which case you can remove Babel:
-      https://reactjs.org/docs/react-without-jsx.html
-    -->
   </body>
 </html>
